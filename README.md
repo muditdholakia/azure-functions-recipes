@@ -4,7 +4,7 @@ Original Python v2 Azure Functions recipes with HTTP, timer, queue, Event Grid, 
 
 ## Architecture
 
-HTTP/timer/storage queue/Event Grid/Service Bus → Python v2 Functions app → validation and bounded processing. Graph sends HTTPS change notifications to a webhook; it is not a native Graph trigger.
+HTTP/timer/storage queue/Event Grid/Service Bus â†’ Python v2 Functions app â†’ validation and bounded processing. Graph sends HTTPS change notifications to a webhook; it is not a native Graph trigger.
 
 ## Prerequisites
 
@@ -13,11 +13,11 @@ Python 3.12, Azure Functions Core Tools v4, Azurite for storage development, Azu
 ## Setup
 
 1. Run `python -m venv .venv`, activate it, and run `pip install -r requirements.txt`.
-2. Copy `.env.example` values into an untracked `local.settings.json` with `IsEncrypted: false` and a `Values` object. Core Tools does not load .env automatically.
+2. Copy `.env.example` values into an untracked `examples/local.settings.json` with `IsEncrypted: false` and a `Values` object. Core Tools does not load .env automatically.
 3. Start Azurite; use `AzureWebJobsStorage=UseDevelopmentStorage=true` locally.
 4. Run `func start --script-root examples`. Disabled cloud-only functions remain disabled until their connections are configured.
 5. Call `http://localhost:7071/api/hello?name=Curator`. Local Functions normally bypasses authorization; deployed HTTP endpoints require a function key.
-6. Configure Service Bus connection and Graph client-state outside Git; enable each handler explicitly. Deploy manually to a development Flex Consumption app using `func azure functionapp publish <APP_NAME> --script-root examples`.
+6. Configure Service Bus connection and Graph client-state outside Git; enable each handler explicitly. Deploy manually to a development Flex Consumption app using `cd examples` followed by `func azure functionapp publish <APP_NAME>`.
 
 ## Sample workflow
 
