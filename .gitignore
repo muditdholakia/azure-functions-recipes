@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+local.settings.json
+*.pem
+*.pfx
+*.key
+output/
+data/
+.DS_Store
